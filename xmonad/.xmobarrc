@@ -10,7 +10,7 @@ Config { overrideRedirect = False
                         , "--normal", "green"
                         ] 10
                     , Run Alsa "default" "Master"
-                        [ "--template", "<volumestatus>"
+                        [ "--template", "Volume: <volumestatus>"
                         , "--suffix"  , "True"
                         , "--"
                         , "--on", ""
