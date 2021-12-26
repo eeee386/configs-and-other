@@ -11,7 +11,7 @@ feh --bg-fill --no-fehbg ~/Pictures/haskell-red-noise.png
 xscreensaver -no-splash &
 
 # Power Management
-xfce4-power-manager &
+lxqt-powermanagement &
 
 # Compositor
 picom &
