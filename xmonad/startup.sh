@@ -13,6 +13,9 @@ xscreensaver -no-splash &
 # Power Management
 xfce4-power-manager &
 
+# Compositor
+picom &
+
 if [ -x /usr/bin/nm-applet ] ; then
     nm-applet --sm-disable &
 fi
