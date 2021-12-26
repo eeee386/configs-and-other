@@ -10,8 +10,7 @@ feh --bg-fill --no-fehbg ~/Pictures/haskell-red-noise.png
 # Fire up screensaver
 xscreensaver -no-splash &
 
-# Power Management
-lxqt-powermanagement &
+
 
 # Compositor
 picom &
@@ -19,3 +18,6 @@ picom &
 if [ -x /usr/bin/nm-applet ] ; then
     nm-applet --sm-disable &
 fi
+
+# Power Management
+lxqt-powermanagement &
