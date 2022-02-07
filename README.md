@@ -7,3 +7,6 @@
 ## Xmonad & Xmobar
 - Very basic config for everyday use
 - Installation and config tutorial
+## Mac
+- yabai + shkd
+- basic config for work
