@@ -26,12 +26,12 @@ myConfig = def
     { modMask    = mod4Mask      -- Rebind Mod to the Super key
     , manageHook = myManageHook  -- Match on certain windows
     , startupHook= myStartupHook
-    , terminal   = "terminator"
+    , terminal   = "kitty"
     }
   `additionalKeysP`
     [ ("M-S-z", spawn "xscreensaver-command -lock")
     , ("M-S-p", unGrab *> spawn "scrot -s"        )
-    , ("M-b"  , spawn "librewolf"               )
+    , ("M-b"  , spawn "brave-browser"             )
     , ("M-p"  , spawn "rofi -show drun"           )
     , ("M-<F10>", spawn "pactl set-sink-volume 0 +5%")
     , ("M-<F11>", spawn "pactl set-sink-volume 0 -5%")
