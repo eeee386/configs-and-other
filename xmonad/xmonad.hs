@@ -72,6 +72,6 @@ myXmobarPP = def
     lowWhite = xmobarColor "#bbbbbb" ""
 
 myStartupHook = do
-  spawn "/home/sedon/.xmonad/startup.sh"
+  spawn "~/.xmonad/startup.sh"
 
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_h)
