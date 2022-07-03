@@ -1,0 +1,22 @@
+l
+ls
+emacs --version
+ls
+ls
+mkdir emacsFromScratch
+ls
+cd emacsFromScratch/
+ls
+touch init.el
+emacs -q init.el
+emacs -q -l init.el
+emacs -q -l init.el
+emacs -q -l init.el
+fc-list
+fc-list | grep Fira
+emacs -q -l init.el
+emacs -q -l init.el
+emacs -q -l init.el
+emacs -q -l init.el
+emacs -q -l init.el
+emacs -q -l init.el
