@@ -4,7 +4,10 @@
 ;; :custom or :config -> add customization
 ;; :bind -> bind key commands
 ;; remap -> remap keybinding to a new function
+;; :bind-keymap -> add command prefix -> get to commands easier from a lead key
 ;; # -> use a function instead of the defined (default) function
+
+;; If some package fails to load "M-x list-package" to refresh package list  
 
 ;; M-x check-parens: check where are the parenthesis are unbalanced -> check Emacs lisp faster
 ;; if error in package pull: M-x list-packages to refresh packages
@@ -12,7 +15,7 @@
 ;; C-u: Universal argument: augment (change) behaviour of emacs functions,
 ;; the more you use it the more augmentation levels the functions will get,
 ;; with different numbers you get different behaviour
-;; No it is rebound to vim
+;; No it is rebound to vim scroll
 
 ;; TODO: create eshell binding in general
 ;; TODO: create hydra go to next buffer binding in general 
@@ -156,6 +159,8 @@
   (setq evil-want-keybinding nil)
   (setq evil-want-C-u-scroll t)
   (setq evil-want-C-i-jump nil)
+  :hook
+  (sedon/evil-hook)
   :config
   (evil-mode 1)
   (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
@@ -219,4 +224,27 @@ _~_: modified
   "ts" '(hydra-text-scale/body :which-key "scale text"))
 
 (use-package markdown-mode)
+;; Check why this fails
 (use-package flymd)
+
+;; Easier handling of Projects
+(use-package projectile
+  :diminish projectile-mode
+  :config (projectile-mode)
+  :custom ((projectile-completion-system 'ivy))
+  :bind-keymap
+  ("C-c p" . projectile-command-map)
+  :init
+  (when (file-directory-p "~")
+    (setq projectile-project-search-path '("~")))
+  (setq projectile-switch-project-action #'projectile-dired)
+  )
+
+;; Counsel for projectile
+;; important command: M-x counsel-projectile-rg -> fast fuzzy search in projects 
+(use-package counsel-projectile
+  :config (counsel-projectile-mode))
+
+(use-package magit
+  ;; put diff buffer in the same buffer as the code
+  :custom (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
